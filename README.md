@@ -2,10 +2,6 @@
 
 Syntax::Feature::Qi - Remove the same indendation from all lines
 
-<div>
-    <p><a style="float: left;" href="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi"><img src="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi.svg?branch=master">&nbsp;</a>
-</div>
-
 # SYNOPSIS
 
     use syntax 'qi';
@@ -40,6 +36,7 @@ all other lines in the string.
 
 - [Syntax::Feature::Ql](https://metacpan.org/pod/Syntax::Feature::Ql) (which served as a base for this)
 - [Syntax::Feature::Qs](https://metacpan.org/pod/Syntax::Feature::Qs)
+- [String::Nudge](https://metacpan.org/pod/String::Nudge)
 - [syntax](https://metacpan.org/pod/syntax)
 
 # AUTHOR

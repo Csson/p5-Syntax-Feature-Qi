@@ -38,7 +38,8 @@ method install($class: %args) {
     }
     on_scope_end {
         namespace::clean->clean_subroutines($target, @new_ops);
-    }
+    };
+    return 1;
 }
 method _run_callback {
     return sub ($) {
@@ -86,8 +87,6 @@ __END__
 
 Syntax::Feature::Qi - Remove the same indendation from all lines
 
-=for html <p><a style="float: left;" href="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi"><img src="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi.svg?branch=master">&nbsp;</a>
-
 =head1 SYNOPSIS
 
     use syntax 'qi';
@@ -126,6 +125,8 @@ all other lines in the string.
 =item L<Syntax::Feature::Ql> (which served as a base for this)
 
 =item L<Syntax::Feature::Qs>
+
+=item L<String::Nudge>
 
 =item L<syntax>
 
