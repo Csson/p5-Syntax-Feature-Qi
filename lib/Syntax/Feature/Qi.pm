@@ -84,33 +84,39 @@ __END__
 
 =head1 NAME
 
-Syntax::Feature::Qs - Trim whitespace from all lines
+Syntax::Feature::Qi - Remove the same indendation from all lines
 
-=for html <p><a style="float: left;" href="https://travis-ci.org/Csson/p5-Syntax-Feature-Qs"><img src="https://travis-ci.org/Csson/p5-Syntax-Feature-Qs.svg?branch=master">&nbsp;</a>
+=for html <p><a style="float: left;" href="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi"><img src="https://travis-ci.org/Csson/p5-Syntax-Feature-Qi.svg?branch=master">&nbsp;</a>
 
 =head1 SYNOPSIS
 
-    use syntax 'qs';
+    use syntax 'qi';
 
     say qs{
-        Multi line
-        string
+        This is a sub routine:
+        sub printme {
+            print shift;
+        }
     };
 
     # is exactly the same as
 
-    say q{
-    Multi line
-    string
+    say qs{
+    This is a sub routine:
+    sub printme {
+        print shift;
+    }
     };
 
 =head1 DESCRIPTION
 
 This is a syntax extension to be used with L<syntax>.
 
-It provides two quote-like operators, C<qs> and C<qqs>. They are drop-in replacements for C<q> and C<qq>, respectively.
+It provides two quote-like operators, C<qi> and C<qqi>. They are drop-in replacements for C<q> and C<qq>, respectively.
 
-Their purpose is to automatically trim leading and trailing horizontal whitespace on every line. They do not remove empty lines.
+They work like this: First they find the first line in the string with a non-white space character. It saves the
+white space from the beginning of that line up to that character, and then it tries to remove the exact same whitespace from
+all other lines in the string.
 
 
 =head1 SEE ALSO
@@ -118,6 +124,8 @@ Their purpose is to automatically trim leading and trailing horizontal whitespac
 =over 4
 
 =item L<Syntax::Feature::Ql> (which served as a base for this)
+
+=item L<Syntax::Feature::Qs>
 
 =item L<syntax>
 

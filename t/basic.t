@@ -1,68 +1,66 @@
 use strict;
 use Test::More;
-use syntax 'qs';
+use syntax qw/qi qs/;
 
-subtest 'qs' => sub {
-    is qs/a test/, 'a test', 'single quotes, single line';
+subtest 'qi' => sub {
+    is qi/a test/, 'a test', 'single quotes, single line';
 
-    is qs{ first line
+    is qi{ first line
            second line
-          }, "first line\nsecond line\n", 'single quotes, multiple lines I';
+          }, "first line\n          second line\n         ", 'single quotes, multiple lines I';
 
-    is qs{ first line
+    is qi{    first line
            second line
-}, "first line\nsecond line\n", 'single quotes, multiple lines II';
+  }, "first line\n       second line\n  ", 'single quotes, multiple lines II';
 
-    is qs{
+    is qi{
            first line
-           second line}, "\nfirst line\nsecond line", 'single quotes, multiple lines III';
+               second line}, "\nfirst line\n    second line", 'single quotes, multiple lines III';
 
-    is qs{ first line
-           second line   }, "first line\nsecond line", 'single quotes, multiple lines IV';
+    is qi{ first line
+           second line   }, "first line\n          second line   ", 'single quotes, multiple lines IV';
 
-    is_deeply ['first', \qs/3/, 'third'], ['first', \3, 'third'], 'As reference';
+    is_deeply ['first', \qi/3/, 'third'], ['first', \3, 'third'], 'As reference';
 
-    is sprintf(qs{
+    is sprintf(qi{
             first: %d
-            second: %s     }, '37', 'tests'), "\nfirst: 37\nsecond: tests", 'sprintf-d';
+            second: %s     }, '37', 'tests'), "\nfirst: 37\nsecond: tests     ", 'sprintf-d';
 
-    is qs 2
+    is qi 2
             34562, qq 2\n34562, 'Spaced and numerical';
 
-    is qs[
-            1 2 3 ]."\n", "\n1 2 3\n", 'Precedence';
+    is qi[
+            1 2 3 ]."\n", "\n1 2 3 \n", 'Precedence';
 
-    is qs " $why @do \this ", q{$why @do \this}, '...';
+    is qi " $why @do \this ", q{$why @do \this }, '...';
 
     done_testing;
 };
 
 
-subtest "qqs" => sub {
-    is qqs{ single line }, 'single line', 'single line';
+subtest "qqi" => sub {
+    is qqi{ single line }, 'single line ', 'single line';
 
-    is qqs{
+    is qqi{
         one
-        two
-    }, "\none\ntwo\n", 'Multiple line, leading+trailing';
+            two
+    }, "\none\n    two\n    ", 'Multiple line, leading+trailing';
 
     my ($foo, $bar) = (21, 23);
-    is qqs{
+    is qqi{
         $foo
-        $bar
-    }, "\n21\n23\n", 'interpolating';
+       $bar
+    }, "\n21\n       23\n    ", 'interpolating';
 
-    is qqs!
+    is qqi!
         foo
-        bar    !, "\nfoo\nbar", 'exclamation delimiter';
+        bar    !, "\nfoo\nbar    ", 'exclamation delimiter';
 
-    is_deeply [ 23, \qqs/52/, 17 ], [23, \52, 17], 'references';
+    is_deeply [ 23, \qqi/52/, 17 ], [23, \52, 17], 'references';
 
-    is qqs! foo @{[ map "$_\n", qw( bar baz ) ]} qux !,
-        "foo bar\nbaz\nqux",
+    is qqi! foo @{[ map "$_\n", qw( bar baz ) ]} qux !,
+        "foo bar\nbaz\nqux ",
         'embedded expression';
-
-    ok qqs(  main  )->can('is'), 'dereference precedence';
 
     done_testing;
 };
