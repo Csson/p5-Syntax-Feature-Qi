@@ -1,6 +1,6 @@
 use strict;
 
-package Syntax::Feature::Qs;
+package Syntax::Feature::Qi;
 
 use Devel::Declare 0.006007 ();
 use B::Hooks::EndOfScope 0.09;
@@ -11,7 +11,7 @@ use aliased 'Devel::Declare::Context::Simple', 'Context';
 use syntax qw|simple/v2|;
 use namespace::clean;
 
-my %quote_op = qw(qs q qqs qq);
+my %quote_op = qw(qi q qqi qq);
 my @new_ops = keys %quote_op;
 
 method install($class: %args) {
@@ -43,7 +43,13 @@ method install($class: %args) {
 method _run_callback {
     return sub ($) {
         my $string = shift;
-        $string =~ s{^\h+|\h+$}{}gms;
+        return $string if $string =~ m{\A\s*\Z}ms;
+
+        my $remove_indent = $string =~ m{\A(\h*)\S}      ? $1
+                          : $string =~ m{\A\s*\n(\h*)\S} ? $1
+                          :                                ''
+                          ;
+        $string =~ s{^$remove_indent}{}gms;
         return $string;
     };
 }
