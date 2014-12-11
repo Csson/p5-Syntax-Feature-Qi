@@ -91,7 +91,7 @@ Syntax::Feature::Qi - Remove the same indendation from all lines
 
     use syntax 'qi';
 
-    say qs{
+    say qi{
         This is a sub routine:
         sub printme {
             print shift;
@@ -100,7 +100,7 @@ Syntax::Feature::Qi - Remove the same indendation from all lines
 
     # is exactly the same as
 
-    say qs{
+    say qi{
     This is a sub routine:
     sub printme {
         print shift;

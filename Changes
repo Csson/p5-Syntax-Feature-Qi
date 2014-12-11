@@ -1,5 +1,22 @@
 Revision history for Syntax-Feature-Qi
 
 {{$NEXT}}
-   - Initial release
+ [API Changes]
+
+ [Bug Fixes]
+ - Required both qi and qs in test.
+
+ [Documentation]
+ - Used qs instead of qi in synopsis.
+
+ [Enhancements]
+
+ [Meta]
+
+ [New Features]
+
+ [Revision]
+
+0.0100 2014-12-10T18:58:02Z CET
+ - Initial release
 
