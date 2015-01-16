@@ -1,5 +1,5 @@
 {
-   "abstract" : "Remove the same indendation from all lines",
+   "abstract" : "Remove the same indendation from all lines in a string",
    "author" : [
       "Erik Carlsson <info@code301.com>"
    ],

@@ -1,6 +1,7 @@
 NAME
 
-    Syntax::Feature::Qi
+    Syntax::Feature::Qi - Remove the same indendation from all lines in a
+    string
 
 VERSION
 
@@ -38,32 +39,15 @@ DESCRIPTION
     beginning of that line up to that character, and then it tries to
     remove the exact same whitespace from all other lines in the string.
 
-NAME
-
-    Syntax::Feature::Qi - Remove the same indendation from all lines
-
 SEE ALSO
 
-    Syntax::Feature::Ql (which served as a base for this)
+      * Syntax::Feature::Ql (which served as a base for this)
 
-    Syntax::Feature::Qs
+      * Syntax::Feature::Qs
 
-    String::Nudge
+      * String::Nudge
 
-    syntax
-
-AUTHOR
-
-    Erik Carlsson <info@code301.com>
-
-COPYRIGHT
-
-    Copyright 2014 - Erik Carlsson
-
-LICENSE
-
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+      * syntax
 
 SOURCE
 

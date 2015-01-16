@@ -1,6 +1,6 @@
 # NAME
 
-Syntax::Feature::Qi
+Syntax::Feature::Qi - Remove the same indendation from all lines in a string
 
 # VERSION
 
@@ -36,29 +36,12 @@ They work like this: First they find the first line in the string with a non-whi
 white space from the beginning of that line up to that character, and then it tries to remove the exact same whitespace from
 all other lines in the string.
 
-# NAME
-
-Syntax::Feature::Qi - Remove the same indendation from all lines
-
 # SEE ALSO
 
 - [Syntax::Feature::Ql](https://metacpan.org/pod/Syntax::Feature::Ql) (which served as a base for this)
 - [Syntax::Feature::Qs](https://metacpan.org/pod/Syntax::Feature::Qs)
 - [String::Nudge](https://metacpan.org/pod/String::Nudge)
 - [syntax](https://metacpan.org/pod/syntax)
-
-# AUTHOR
-
-Erik Carlsson <info@code301.com>
-
-# COPYRIGHT
-
-Copyright 2014 - Erik Carlsson
-
-# LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
 
 # SOURCE
 
