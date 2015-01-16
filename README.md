@@ -1,6 +1,10 @@
 # NAME
 
-Syntax::Feature::Qi - Remove the same indendation from all lines
+Syntax::Feature::Qi
+
+# VERSION
+
+Version 0.0102, released 2015-01-16.
 
 # SYNOPSIS
 
@@ -32,6 +36,10 @@ They work like this: First they find the first line in the string with a non-whi
 white space from the beginning of that line up to that character, and then it tries to remove the exact same whitespace from
 all other lines in the string.
 
+# NAME
+
+Syntax::Feature::Qi - Remove the same indendation from all lines
+
 # SEE ALSO
 
 - [Syntax::Feature::Ql](https://metacpan.org/pod/Syntax::Feature::Ql) (which served as a base for this)
@@ -51,3 +59,22 @@ Copyright 2014 - Erik Carlsson
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
+# SOURCE
+
+[https://github.com/Csson/p5-Syntax-Feature-Qi](https://github.com/Csson/p5-Syntax-Feature-Qi)
+
+# HOMEPAGE
+
+[https://metacpan.org/release/Syntax-Feature-Qi](https://metacpan.org/release/Syntax-Feature-Qi)
+
+# AUTHOR
+
+Erik Carlsson <info@code301.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2015 by Erik Carlsson.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
