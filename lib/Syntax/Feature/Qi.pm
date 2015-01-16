@@ -1,20 +1,24 @@
 use strict;
+use warnings;
 
 package Syntax::Feature::Qi;
+
+# VERSION
+# ABSTRACT: Remove the same indendation from all lines in a string
 
 use Devel::Declare 0.006007 ();
 use B::Hooks::EndOfScope 0.09;
 use Sub::Install 0.925 qw/install_sub/;
-
-use aliased 'Devel::Declare::Context::Simple', 'Context';
-
-use syntax qw|simple/v2|;
+use Devel::Declare::Context::Simple;
 use namespace::clean;
 
 my %quote_op = qw(qi q qqi qq);
 my @new_ops = keys %quote_op;
 
-method install($class: %args) {
+sub install {
+    my $class = shift;
+    my %args = @_;
+
     my $target = $args{'into'};
 
     Devel::Declare->setup_for($target => {
@@ -22,7 +26,7 @@ method install($class: %args) {
             my $name = $_;
             ($name => {
                 const => sub {
-                    my $context = Context->new;
+                    my $context = Devel::Declare::Context::Simple->new;
                     $context->init(@_);
                     return $class->_transform($name, $context);
                 },
@@ -41,7 +45,9 @@ method install($class: %args) {
     };
     return 1;
 }
-method _run_callback {
+
+sub _run_callback {
+
     return sub ($) {
         my $string = shift;
         return $string if $string =~ m{\A\s*\Z}ms;
@@ -55,7 +61,11 @@ method _run_callback {
     };
 }
 
-method _transform ($class: $name, $ctx) {
+sub _transform {
+    my $class = shift;
+    my $name = shift;
+    my $ctx = shift;
+
     $ctx->skip_declarator;
     my $length = Devel::Declare::toke_scan_str($ctx->offset);
     my $string = Devel::Declare::get_lex_stuff;
@@ -82,10 +92,6 @@ method _transform ($class: $name, $ctx) {
 __END__
 
 =encoding utf-8
-
-=head1 NAME
-
-Syntax::Feature::Qi - Remove the same indendation from all lines
 
 =head1 SYNOPSIS
 
@@ -120,29 +126,10 @@ all other lines in the string.
 
 =head1 SEE ALSO
 
-=over 4
-
-=item L<Syntax::Feature::Ql> (which served as a base for this)
-
-=item L<Syntax::Feature::Qs>
-
-=item L<String::Nudge>
-
-=item L<syntax>
-
-=back
-
-=head1 AUTHOR
-
-Erik Carlsson E<lt>info@code301.comE<gt>
-
-=head1 COPYRIGHT
-
-Copyright 2014 - Erik Carlsson
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+=for :list
+* L<Syntax::Feature::Ql> (which served as a base for this)
+* L<Syntax::Feature::Qs>
+* L<String::Nudge>
+* L<syntax>
 
 =cut
