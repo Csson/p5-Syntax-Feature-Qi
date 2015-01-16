@@ -4,7 +4,7 @@
       "Erik Carlsson <info@code301.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.143240",
+   "generated_by" : "Dist::Zilla version 5.029, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -31,8 +31,6 @@
       },
       "develop" : {
          "requires" : {
-            "Test::More" : "0",
-            "Test::NoTabs" : "0",
             "Test::Pod" : "1.41"
          }
       },
@@ -43,13 +41,29 @@
             "Devel::Declare::Context::Simple" : "0",
             "MooseX::Role::Parameterized" : "1.00",
             "Sub::Install" : "0.925",
-            "Syntax::Feature::Simple::V2" : "0",
             "namespace::clean" : "0",
             "perl" : "5.008005"
          }
       }
    },
+   "provides" : {
+      "Syntax::Feature::Qi" : {
+         "file" : "lib/Syntax/Feature/Qi.pm",
+         "version" : "0.0102"
+      }
+   },
    "release_status" : "stable",
-   "version" : "0.0101"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/Csson/p5-Syntax-Feature-Qi/issues"
+      },
+      "homepage" : "https://metacpan.org/release/Syntax-Feature-Qi",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/Csson/p5-Syntax-Feature-Qi.git",
+         "web" : "https://github.com/Csson/p5-Syntax-Feature-Qi"
+      }
+   },
+   "version" : "0.0102"
 }
 
