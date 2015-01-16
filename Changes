@@ -6,9 +6,18 @@ Revision history for Syntax-Feature-Qi
  [Bug Fixes]
 
  [Documentation]
- - Cleaned up, now built with Pod::Weaver
 
  [Enhancements]
+
+ [Meta]
+
+ [New Features]
+
+ [Revision]
+
+0.2000 2015-01-16T16:59:11Z CET
+ [Documentation]
+ - Cleaned up, now built with Pod::Weaver
 
  [Meta]
  - Added git repo to meta
@@ -16,10 +25,6 @@ Revision history for Syntax-Feature-Qi
  - Removed dependency on aliased
  - Added README
  - Now uses @Author::CSSON dist zilla bundle, extracted
-
- [New Features]
-
- [Revision]
 
 0.0101 2014-12-11T15:45:19Z CET
  [Bug Fixes]

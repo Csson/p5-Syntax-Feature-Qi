@@ -4,7 +4,7 @@ Syntax::Feature::Qi - Remove the same indendation from all lines in a string
 
 # VERSION
 
-Version 0.2000, released 2015-01-16.
+Version 0.2001, released 2015-01-16.
 
 # SYNOPSIS
 

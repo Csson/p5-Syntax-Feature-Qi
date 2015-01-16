@@ -44,12 +44,18 @@
             "namespace::clean" : "0",
             "perl" : "5.008005"
          }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.96",
+            "syntax" : "0"
+         }
       }
    },
    "provides" : {
       "Syntax::Feature::Qi" : {
          "file" : "lib/Syntax/Feature/Qi.pm",
-         "version" : "0.2000"
+         "version" : "0.2001"
       }
    },
    "release_status" : "stable",
@@ -64,6 +70,6 @@
          "web" : "https://github.com/Csson/p5-Syntax-Feature-Qi"
       }
    },
-   "version" : "0.2000"
+   "version" : "0.2001"
 }
 
