@@ -15,6 +15,13 @@ Revision history for Syntax-Feature-Qi
 
  [Revision]
 
+ [Requirements]
+ - Require correct Perl version. \h was introduced in 5.10.
+
+0.2001 2015-01-16T17:40:10Z CET
+ [Meta]
+ - Fixed missing test prereq.
+
 0.2000 2015-01-16T16:59:11Z CET
  [Documentation]
  - Cleaned up, now built with Pod::Weaver
