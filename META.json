@@ -55,7 +55,7 @@
    "provides" : {
       "Syntax::Feature::Qi" : {
          "file" : "lib/Syntax/Feature/Qi.pm",
-         "version" : "0.2002"
+         "version" : "0.2003"
       }
    },
    "release_status" : "stable",
@@ -70,6 +70,6 @@
          "web" : "https://github.com/Csson/p5-Syntax-Feature-Qi"
       }
    },
-   "version" : "0.2002"
+   "version" : "0.2003"
 }
 

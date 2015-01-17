@@ -16,6 +16,11 @@ Revision history for Syntax-Feature-Qi
  [Revision]
 
  [Requirements]
+ - Moved syntax to build req (from test req).
+ - Removed MooseX::Role::Parameterized as a prereq (not used since 0.2000).
+
+0.2002 2015-01-17T14:26:56Z CET
+ [Requirements]
  - Require correct Perl version. \h was introduced in 5.10.
 
 0.2001 2015-01-16T17:40:10Z CET
