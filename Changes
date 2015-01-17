@@ -13,8 +13,11 @@ Revision history for Syntax-Feature-Qi
 
  [New Features]
 
+ [Requirements]
+
  [Revision]
 
+0.2003 2015-01-17T19:54:30Z CET
  [Requirements]
  - Moved syntax to build req (from test req).
  - Removed MooseX::Role::Parameterized as a prereq (not used since 0.2000).
