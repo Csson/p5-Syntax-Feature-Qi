@@ -3,6 +3,9 @@ use Test::More;
 use syntax qw/qi/;
 
 subtest 'qi' => sub {
+
+    is qi/  /, '  ', 'just spaces - untouched';
+
     is qi/a test/, 'a test', 'single quotes, single line';
 
     is qi{ first line
