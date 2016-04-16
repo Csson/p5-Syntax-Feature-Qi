@@ -1,14 +1,16 @@
+use 5.10.0;
 use strict;
 use warnings;
 
 package Syntax::Feature::Qi;
 
-# VERSION
 # ABSTRACT: Remove the same indendation from all lines in a string
+# AUTHORITY
+our $VERSION = '1.0000';
 
-use Devel::Declare 0.006007 ();
-use B::Hooks::EndOfScope 0.09;
-use Sub::Install 0.925 qw/install_sub/;
+use Devel::Declare();
+use B::Hooks::EndOfScope;
+use Sub::Install qw/install_sub/;
 use Devel::Declare::Context::Simple;
 use namespace::clean;
 
