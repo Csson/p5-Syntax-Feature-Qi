@@ -6,7 +6,7 @@ package Syntax::Feature::Qi;
 
 # ABSTRACT: Remove the same indendation from all lines in a string
 # AUTHORITY
-our $VERSION = '1.0000';
+our $VERSION = '1.0001';
 
 use Devel::Declare();
 use B::Hooks::EndOfScope;
